@@ -7,7 +7,7 @@ import PySimpleGUI as sg
 layout = [[sg.Text("Hello from PySimpleGUI")], [sg.Button("OK")]]
 
 # Create the window
-window = sg.Window("Demo", layout)
+window = sg.Window("Demo", layout,margins=(500,500))
 
 # Create an event loop
 while True:
