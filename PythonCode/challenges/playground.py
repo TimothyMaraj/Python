@@ -33,4 +33,7 @@ def ifThereIs100(list):
             continue
 
 lst=[10, 99, 98, 85, 45, 59, 65, 66, 76, 12, 35, 13, 100, 80, 95]
-ifThereIs100(lst)
+#ifThereIs100(lst)
+
+cubes = [cube**3 for cube in range(1,11,1)]
+print(cubes)
