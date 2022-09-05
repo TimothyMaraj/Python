@@ -11,7 +11,7 @@ def randomNumber(a,b):
     return random.randrange(a,b,1)
 
 def welcomeUser(): 
-    print("Hello {}. Let's play a game \n".format(os.getlogin()))
+    print("\n","Hello {}. Let's play a game".format(os.getlogin()))
 
 def startGame(): 
    a,b = input("What two positive numbers would you like to guess between ? ").split()
@@ -31,8 +31,10 @@ def startGame():
     else: 
         tries -= 1
         print("try again... remaining tries {}".format(tries))
-        
+
+
     if tries == 0: 
+        print("\n")
         print("Better Luck next time...")
         print("Random Num was: {}".format(randNum))
 
