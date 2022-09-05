@@ -42,6 +42,11 @@ class Users():
 # 
 def call_user_class(): 
     user1 = Users("Tim","Maraj","AlternateBased","2000-01-04")
+    userlist = []
+    for i in range(0,4,1): 
+        user
+        userlist.append()
+
     user1.describe()
 
 call_user_class()
