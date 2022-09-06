@@ -28,26 +28,19 @@ def userChoice():
     
 
 def game(): 
-    botPick = botChoice()
-    userPick = userChoice()
-    print(botPick,userPick)
+    #botPick = botChoice()
+    #userPick = userChoice()
+    #print(botPick,userPick)
 
     botPick = "rock"
-    userPick = "rock"
+    userPick = "paper"
+    #need to to logic here for the check
 
-    if botPick == userChoice:
-        print("user won")
-    elif botPick == "paper" and userChoice == "scissor":
-        print("user won")
-    elif botPick == "scissor" and userChoice == "rock":
-        print("user won")
-    elif botPick == "paper" and userChoice == "rock":
-        print("bot won")
-    elif botPick == "scissor" and userChoice == "paper":
-        print("bot won")
-    elif botPick == "rock" and userChoice == "scissor":
-        print("bot won")
+    if botPick == "rock" and userPick == "rock":
+        print("tie") 
+    elif botPick == "rock" and userPick == "paper": 
+        print("user win")
     else: 
-        print("tie")
+        print("tf bro")
 
 game()
