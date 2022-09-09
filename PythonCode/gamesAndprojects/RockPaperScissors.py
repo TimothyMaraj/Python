@@ -1,3 +1,5 @@
+# can I make a gui to let users pick ?
+
 import random
 
 def botChoice(): 
@@ -11,12 +13,10 @@ def botChoice():
 
 def userChoice(): 
     print("Welcome to the game:")
-    userInput = ""
-    print("pick: ")
     print("rock: 1")
     print("paper: 2")
     print("scissors: 3")
-
+    print("pick: ",end=" ")
     userInput = int(input())
     
     if userInput == 1: 
@@ -28,19 +28,17 @@ def userChoice():
     
 
 def game(): 
-    #botPick = botChoice()
-    #userPick = userChoice()
-    #print(botPick,userPick)
-
-    botPick = "rock"
-    userPick = "paper"
-    #need to to logic here for the check
-
-    if botPick == "rock" and userPick == "rock":
-        print("tie") 
-    elif botPick == "rock" and userPick == "paper": 
-        print("user win")
+    botPick = botChoice()
+    userPick = userChoice()
+    print(botPick,userPick)
+    if botPick == userPick: 
+        print("tie")
     else: 
-        print("tf bro")
+        if botPick == "rock" and userPick == "scissors" or botPick == "paper" and userPick == "rock" or botPick == "scissors" and userPick == "paper":
+            print("bot won")
+        else: 
+            print("user win")
+
+    return None
 
 game()

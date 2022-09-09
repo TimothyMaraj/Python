@@ -1,4 +1,4 @@
-from cProfile import run
+
 import random
 import os 
 
@@ -17,6 +17,8 @@ def startGame():
    a,b = input("What two positive numbers would you like to guess between ? ").split()
    a = int(a)
    b = int(b)
+   c = 1/b
+   print("Your odds of guessing right on the first try are :  {}".format(c)) 
    print("Now lets begin! \n")
    randNum = randomNumber(a,b)
 
