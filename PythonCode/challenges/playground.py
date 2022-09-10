@@ -35,5 +35,19 @@ def ifThereIs100(list):
 lst=[10, 99, 98, 85, 45, 59, 65, 66, 76, 12, 35, 13, 100, 80, 95]
 #ifThereIs100(lst)
 
-cubes = [cube**3 for cube in range(1,11,1)]
-print(cubes)
+#cubes = [cube**3 for cube in range(1,11,1)]
+#print(cubes)
+
+def check(dict2): 
+    print(dict2[(1,2)])
+    print(dict2.get((1,3)))
+
+dict1 = {(1,2):"22"}
+
+check(dict1)
+ifThereIs100(lst)
+
+tuple1 = (0,2)
+a,b = tuple1
+print(a,b)
+
