@@ -44,9 +44,11 @@ def call_user_class():
     user1 = Users("Tim","Maraj","AlternateBased","2000-01-04")
     userlist = []
     for i in range(0,4,1): 
-        user
-        userlist.append()
+        userlist.append(user1)
 
     user1.describe()
+    print() # prints out object location not the 
+
+
 
 call_user_class()
