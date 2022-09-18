@@ -1,23 +1,12 @@
-# a list of cards like a python list
-# then make it rand when you want a "hit"
-# user input for a yes no hit
-# func that lists out your hand 
-# counts up the Value of your hand 
-# determins if you bust
-# a limiting amount for bets 
-# player starts at 500 dollars or we can call them 
-# python pence 
-# Ace is a special case can be 1 or 11?
-
-""" some hopes for this would be a smart bot that will ask for a hit 
-    if way too low or would stop if way too high like in 18-20 range
-    would force user to take a hit if they need to get in range
+"""
+    Tie is broken!!!!!!!!!!!!!!!!!!
 """
 
 import random
 cardList = [2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"]
 
 def botHand():
+    listTest = [2, 'Queen', 6]
     botList = []
     for i in range(3): 
         botList.append(cardList[random.randrange(0,len(cardList),1)])
@@ -25,13 +14,12 @@ def botHand():
     return botList
 
 def userHand(): 
+    listTest = [2, 'Queen', 7]
     userList = []
     for i in range(3): 
         userList.append(cardList[random.randrange(0,len(cardList),1)])
     # how can i make this a list comprehension
     return userList
-
-
 
 def cardCount(cards_in_hand): 
     card_count = 0
@@ -54,29 +42,95 @@ def cardCount(cards_in_hand):
                     card_count+=11
                     
     return card_count
-                    
-def bust(): 
+
+# count must be an int from cardCount()                   
+def bust(count): 
     """ a function to determine if you pass 21 or not"""
-    pass
-def win(): 
-    """determines if you have won a round 
-       but a check in main for card count == 21 would be ok too
-    """
-    pass
+    return count>21
 
 def hit(): 
     """returns user or bot a random card that would be 
         appended to the card list of them respectivly  
     """
-    pass
+    return cardList[random.randrange(0,len(cardList),1)]
 
-def printOut(): 
+
+def printOut(userList,botList): 
     """print out will display cards of each player and print count
        something like: [list], count: 21 for example
     """
+    userCount = cardCount(userList)
+    botCount = cardCount(botList)
+    print("User Cards:{} User Count: {}".format(userList, userCount))
+    print("Bot Cards:{} Bot Count: {}".format(botList, botCount))
+        
+
 def main(): 
     """a main looping function that while ask user for hit or another round"""
-    pass
-userListCards = userHand()
-print(userListCards)
-print(cardCount(userListCards))
+    gameloop = True
+    while gameloop: 
+        print("\n")
+        print("New Round")
+        print("\n")
+        #1) get both hands and PRINT
+        #2) check if any busted, if so WHO WON? 
+            # if so 2a) new round 
+        #3) ask user if they want a hit
+            #3a) if they do then append to list and count cards
+            #3b) if they bust bot wins NEW ROUND
+            #3c) if they hit 21 they win
+            #3d) if they dont want any more hits CONINTUE
+        #4) check if bot count is under 18
+            #4a) if so then hit 
+                # if bot hits 21 here they win 
+                # if bot busts then user wins 
+            #4b) if not then continue 
+        #5) if no one busted or won check who has higher cards 
+        userList = userHand()
+        botList = botHand()
+
+        if bust(cardCount(userList)) or bust(cardCount(botList)) : 
+            print("Reshuffle")
+            continue
+        else: 
+            printOut(userList,botList)
+            while input("Do you want a hit: ") == "yes": 
+                userList.append(hit())
+                # it skips over this if you bust? or for some rzn yes in some form does not 
+                # reg as yes ? and skips to the if statemetn to check bot? 
+                printOut(userList,botList)
+                if bust(cardCount(userList)):
+                    print("Bot Won")
+                    break
+                elif cardCount(userList) == 21: 
+                    print("You won!")
+                    break
+                else: 
+                    continue
+            if cardCount(botList) < 18: 
+                while cardCount(botList) != 17 and cardCount(botList) < 20: 
+                    botList.append(hit())
+                    printOut(userList,botList)
+                    if bust(cardCount(botList)): 
+                        print("User won")
+                        break
+                    else: 
+                        continue
+        if bust(cardCount(userList)): 
+            print("Bot Won")
+        elif not bust(cardCount(userList)) and not bust(cardCount(botList)) and cardCount(botList) < cardCount(userList): 
+            print("User Won")
+        elif bust(cardCount(botList)): 
+            print("user Won")
+        else: 
+            print("tie")              
+
+        
+main()
+
+def tests(): 
+    userListCards = userHand()
+    print(userListCards)
+    print(cardCount(userListCards))
+    print(hit())
+    print(bust(cardCount(userListCards)))
