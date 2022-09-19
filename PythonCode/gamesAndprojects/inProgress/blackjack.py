@@ -1,8 +1,10 @@
 """
    -  Tie is broken!!!!!!!!!!!!!!!!!!
    - fix the double win condition
-   - fix bot so if user doesnt take a hit and is still lower, bot wont take a hit and will win
-
+   - fix bot so if user doesnt take a hit and is still lower, bot wont take a hit and will win/-yj
+   - look into oop versus proc for deck class
+    - if you win off rip then what ? 21 on draw ? do you win? 
+    - source the win conditional check to a function_ 
 """
 
 import random
