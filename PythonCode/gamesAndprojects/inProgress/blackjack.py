@@ -1,5 +1,8 @@
 """
-    Tie is broken!!!!!!!!!!!!!!!!!!
+   -  Tie is broken!!!!!!!!!!!!!!!!!!
+   - fix the double win condition
+   - fix bot so if user doesnt take a hit and is still lower, bot wont take a hit and will win
+
 """
 
 import random
