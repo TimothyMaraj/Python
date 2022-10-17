@@ -1,0 +1,22 @@
+<!--templates/time_feed.html-->
+<!--templates/index.html-->
+<html>
+    <head>
+    
+    <p id="clock">{{now}}</p>
+    <p>Date/Time: <span id="datetime"></span></p>
+
+    <script>
+    var dt = new Date();
+    document.getElementById("datetime").innerHTML = dt.toLocaleTimeString();
+    </script>
+   
+   <script type="text/javascript" src="static/clock.js"></script>
+  
+</head>
+  <body onLoad="TimeRender();">
+    <div id="clockDisplay" class="container"></div>
+  </body>
+  
+  
+   </html>
