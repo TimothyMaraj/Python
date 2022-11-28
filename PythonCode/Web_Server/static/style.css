@@ -1,0 +1,36 @@
+.ROS2Info {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    
+}
+.column1{
+   display:inline-block;
+   width: 100px;
+  height: 100px;
+}
+.column2 {
+    display:inline-block;
+    width: 100px;
+    height: 100px;
+}
+.Title {
+    display: block;
+}
+
+.temperature,
+.Pressure
+{
+    width: 100px; 
+    display: inline-block;
+}
+.element {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: #ce8888;
+  
+}

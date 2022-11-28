@@ -2,6 +2,7 @@
 <!--templates/index.html-->
 <html>
     <head>
+      <p><button>Button</button></p>
     
     <p id="clock">{{now}}</p>
     <p>Date/Time: <span id="datetime"></span></p>
@@ -12,10 +13,14 @@
     </script>
    
    <script type="text/javascript" src="static/clock.js"></script>
+   <script type="text/javascript" src="static/temp.js"></script>
   
 </head>
   <body onLoad="TimeRender();">
     <div id="clockDisplay" class="container"></div>
+  </body>
+  <body onLoad="temp();">
+    <div id="temp" class="container"></div>
   </body>
   
   

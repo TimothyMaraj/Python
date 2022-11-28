@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+   
+    <body>
+       
+        <head> TEST PAGE</head>
+
+
+
+        <h1 id="headerOneText">YUMA</h1>
+        <image src="" id="naruto_image" width="200"/>
+        <script>
+            console.log("Awaiting Response");
+            // why did i have to change the url to the route? 
+            fetch('http://127.0.0.1:5500/templates/naruto.jpg').then(response => {
+                console.log(response);
+                return response.blob();
+            })
+            .then(blob => {
+                console.log(blob);
+                document.getElementById('naruto_image').src = URL.createObjectURL(blob);
+            });
+        </script>
+
+
+
+        <h1>YUMA</h1>
+        <div>
+        <button id="background_clicker" onclick="random_bg_color()">Button</button>
+        <script>
+            function random_bg_color() {
+                const arr = ["red","blue","green"]
+                const x = Math.floor(Math.random() * 3);
+                const bgColor = arr[x]
+                console.log(bgColor);
+                document.body.style.background = bgColor;
+                
+            }
+
+        </script>
+        </div>
+        <button id="background_clicker" onclick="random_bg_color()">Button</button>
+        <script>
+            function random_bg_color() {
+                var x = Math.floor(Math.random() * 256);
+                var y = Math.floor(Math.random() * 256);
+                var z = Math.floor(Math.random() * 256);
+                var rgbcolor = "rgb(" + x + "," + y + "," + z + ")";
+                console.log(rgbcolor);
+                const elem = document.getElementById("h3text");
+                elem.style.color = rgbcolor;
+                
+            }
+
+        </script>
+        <button onclick="myFunction()">Click me</button>
+
+        <h4 id="demo">sfda</h4>
+        <script>
+        function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello World";
+        }
+        </script>
+        
+        <div>
+            <button id="background_clicker" onclick="random_bg_color_left()">Lower</button>
+            <script>
+                function random_bg_color_left() {
+                    var index = 0; 
+                    if (document.body.style.background == "red")
+                    {
+                        document.body.style.background = "red";
+                        console.log("Stay red left") ;
+                    }
+                    else if(document.body.style.background == "blue"){
+                        document.body.style.background = "red";
+                    }
+                    else if(document.body.style.background == "green"){
+                        document.body.style.background = "blue";
+                        console.log("blue left");
+                    }
+                    else{
+                        document.body.style.background = "red"
+                    }
+                    
+                    
+                }
+    
+            </script>
+            </div>
+            <button id="background_clicker" onclick="random_bg_color_right()">Higher</button>
+            <script>
+                function random_bg_color_right() {
+                    var index = 0; 
+                    if (document.body.style.background == "red")
+                    {
+                        document.body.style.background = "blue"; 
+                        console.log("blue right");
+                    }
+                    else if(document.body.style.background == "blue"){
+                        document.body.style.background = "green";
+                        console.log("green right");
+                        
+                    }
+                    else if(document.body.style.background == "green"){
+                        document.body.style.background = "green";
+                        console.log("stay green right");
+                    }
+                    else{
+                        document.body.style.background = "green"
+                    }
+                    
+                }
+    
+            </script>
+            </div>
+
+            
+        <div>
+            <div>
+                <p id="firstParagrah" onclick="change_text()">
+                    Change This
+                </p>
+                <script>
+                    function change_text()
+                    {
+                        var i = 0; 
+                        while(i!=5){
+                            const arr = ["F*#K","B!^*#H","N!**GR","F@T","L@SZ#R"]
+                            const randomIndex = Math.floor(Math.random() *4);
+                            //const p = document.getElementById("firstParagraph");
+                            //p.style.text = arr[randomIndex];
+                            console.log(arr[randomIndex])
+                            i++;
+                           
+                        }
+                        document.getElementById("firstParagraph").innerHTML= arr[randomIndex];
+                    }
+                </script>
+            </div>
+        </div>
+
+        <div>
+            <div id="divback">
+                <p>
+                    COUNTS
+                </p>
+                <div id="counter">
+                </div>
+                <script>
+                    let counts = setInterval(updated,100);
+                    let upto = 0; 
+                    let r = 80; 
+                    let g = 140; 
+                    let b = 256; 
+                    let rgbcolor = "rgb(" + r + "," + g + "," + b + ")";
+                    const elem = document.getElementById("divback");
+                    elem.style.background = rgbcolor; 
+                    function updated(){
+                        var count = document.getElementById("counter")
+                        count.innerHTML=++upto;
+
+
+                        if(upto === 200){
+                            clearInterval(counts);
+                        }
+                        if(upto >= 50)
+                        {
+                           // var back = document.getElementById("divback")
+                           // back.style.background = "blue"  
+                           /* var x = Math.floor(Math.random() * 256);
+                            var y = Math.floor(Math.random() * 256);
+                            var z = Math.floor(Math.random() * 256);
+                            var rgbcolor = "rgb(" + x + "," + y + "," + z + ")";
+                            console.log(rgbcolor);
+                            const elem = document.getElementById("h3text");
+                            elem.style.color = rgbcolor; 
+                            */
+                            b--;
+                            var rgbcolor = "rgb(" + r + "," + g + "," + b + ")";
+                            //console.log(rgbcolor);
+                            const elem = document.getElementById("divback");
+                            elem.style.background = rgbcolor; 
+
+                        }
+                        if(upto >= 55){
+                            if(r!=256)
+                            {
+                                r++;
+                            }
+                            if(upto >= 80)
+                            {
+                                if(g!=0 && !(g<=0))
+                                {
+                                    g-=3;
+                                }
+                            }
+                            var rgbcolor = "rgb(" + r + "," + g + "," + b + ")";
+                           // console.log(rgbcolor);
+                            const elem = document.getElementById("divback");
+                            elem.style.background = rgbcolor; 
+                        }
+                        if(upto >= 100){
+                            r+=2;
+                            var rgbcolor = "rgb(" + r + "," + g + "," + b + ")";
+                           // console.log(rgbcolor);
+                            const elem = document.getElementById("divback");
+                            elem.style.background = rgbcolor;
+                        }
+                       
+                    }
+                </script>
+            </div>
+        </div>
+
+
+        
+
+            <!--/ note* here i set the html tag to be background puprle : its set and the random code did not change it
+                        1) do not put the script tage outside of the html tagge
+                        2) adding another body tage did not fix that problem ::: can you have more than one body tag? 
+                        3) when to use script tag ? and if i place it somewhere esle does it affect only the elemetns 
+                        i want to effect or others 
+                        4) 
+                        5) other css options: extention ? placemetn usign divs and css    
+            /-->
+
+            <style>
+                body
+                {
+                    border-color: silver;
+                }
+                button {
+                    border: none;
+                
+                    padding: 15px 32px;
+                }
+                h1 {
+                    color: goldenrod;
+                }
+                h3 {
+                    color: rgb(126, 87, 170); 
+                }
+                h6 {
+                    color: lightseagreen;
+                }
+            </style>
+
+
+            <h3 id="h3text">AKAN</h3>
+
+            <h6>STAR</h6>
+    </body>
+
+
+</html>

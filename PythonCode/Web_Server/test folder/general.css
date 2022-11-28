@@ -1,0 +1,19 @@
+
+body
+{
+    border-color: silver;
+}
+button {
+    border: none;
+
+    padding: 15px 32px;
+}
+h1 {
+    color: goldenrod;
+}
+h2 {
+    color: rgb(126, 87, 170); 
+}
+h6 {
+    color: lightseagreen;
+}

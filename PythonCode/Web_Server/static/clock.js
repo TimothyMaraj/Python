@@ -2,7 +2,6 @@ function TimeRender() {
 
     var currentDate = new Date(); 
     var month = currentDate.getMonth(); 
-    var 
     
     var currentTime = new Date(); 
     var hour = currentTime.getHours(); 

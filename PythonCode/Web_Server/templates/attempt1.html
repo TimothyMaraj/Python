@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Rich Information Display</title>
+    </head>
+    <body>
+        <link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css')}}">
+
+        <div>
+            <p id="current_time"></p>
+            <script type="text/javascript" src="static/Clock2.js"></script>
+        </div>
+
+
+
+
+        <div>
+            <div>
+                    <p id="hypen">
+                    </p>
+                    <script type="text/javascript" src="static/hypen.js">
+                    </script>
+                    
+               
+            </div>
+        </div>
+
+
+        <div id="Title">
+            <div>
+      
+                <p>
+                    Environmental Data
+                </p>
+                    
+               
+            </div>
+        </div>
+
+        <div id="column1">
+                <p id="temperature" class="ROS2Info">
+                    Temp: 000.0 Degrees
+                </p>
+                <script type="text/javascript" src="static/temperature.js">
+                </script>
+                <p id="Pressure"class="ROS2Info">
+                        Pressure: 989.547
+                </p>
+                <p id="gas"class="ROS2Info">
+                        Gas (IAQ): 15:855
+                </p>
+        </div>
+        <div id="column2">
+            
+                <p id="humidity" class="ROS2Info">
+                    Humidity: 45.529
+                </p>
+
+                
+      
+                    <p id="gas_resistance"class="ROS2Info">
+                        Gas(Ohm): 1244218
+                    </p>
+        </div>
+
+        <div class="element">
+        </div>
+        <div class="element">
+        </div>
+        
+
+    </body>
+</html>
